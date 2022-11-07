@@ -1,8 +1,8 @@
 import styles from './App.module.css';
-import Ref from './component/use-ref';
-import UseReducer from './component/use-reducer';
+import Home from './component/Home';
 
 function App() {
+
   return (
     <div className={styles}>
       <div className="App">
@@ -13,12 +13,7 @@ function App() {
             <img src='../build/logo512.png' alt='' />
           </>
         )}
-      </div>
-      <div>
-        <Ref />
-      </div>
-      <div>
-        <UseReducer />
+        <Home />
       </div>
     </div>
   );

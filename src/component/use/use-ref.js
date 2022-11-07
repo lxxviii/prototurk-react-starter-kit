@@ -6,6 +6,7 @@ const Input = forwardRef((props, ref) => {
 
 function Ref() {
 
+    console.log("REF Render Edildi")
     const inputRef = useRef();
     const focusInput = () => {
         console.log(inputRef.current.focus());
