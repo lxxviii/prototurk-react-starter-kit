@@ -2,7 +2,6 @@ import { useReducer, useState, useCallback, useMemo } from 'react';
 import AddTodo from '../../page/AddTodo';
 import Todos from '../../page/Todos';
 
-
 function reducer(state, action) {
     switch (action.type) {
         case ('SET_TODO'): return {
@@ -14,16 +13,13 @@ function reducer(state, action) {
         case ('SET_SEARCH'): return {
             ...state, search: action.value
         }
-        default: return {}
+        default: return('')
     }
 }
 
 function UseReducer() {
 
-    console.log("Use Reducer Render Edildi")
-
     const [count, setCount] = useState(0);
-
     const [state, dispatch] = useReducer(reducer, {
         todos: [],
         todo: '',
@@ -53,9 +49,8 @@ function UseReducer() {
     },[])
 
     const filteredTools = useMemo(() => {
-        return state.todos.filter(todo => todo.localeLowercase('TR').include(state.search.toLocalLowercase('TR')))
+        return state.todos.filter(todo => todo.localeLowercase('tr').include(state.search.toLocalLowercase('tr')))
     }, [state.todos, state.search])
-
 
     return (
         <>
