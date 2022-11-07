@@ -5,7 +5,7 @@ import SwitchLanguage from '../switch/SwitchLanguage';
 
 function Header() {
 
-    /*const { user, setUser } = useAuth();
+    const { user, setUser } = useAuth();
 
     const login = () => {
         setUser({
@@ -15,7 +15,7 @@ function Header() {
 
     const logout = () => {
         setUser(false);
-    }*/
+    }
 
     return (
         <header >
