@@ -1,6 +1,6 @@
 import React from 'react';
-import Ref from './use/use-ref';
-import UseReducer from './use/use-reducer';
+import Ref from './reducers/useref';
+import UseReducer from './reducers/usereducer';
 import Header from './Header';
 import Footer from './Footer';
 
