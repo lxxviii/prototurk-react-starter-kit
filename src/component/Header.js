@@ -1,13 +1,13 @@
-import React, { memo } from "react";
+import SwitchLanguage from './SwitchLanguage';
+import SwitchTheme from './SwitchTheme';
 
-function Header() {
-
-    console.log("Header Render Edildi")
+export default function Header({ theme, setTheme, language, setLanguage }) {
 
     return (
         <>
-            <h1>HEADER EKLENDİ</h1>
+            HEADER <br />
+            <SwitchTheme theme={theme} setTheme={setTheme} />
+            <SwitchLanguage language={language} setLanguage={setLanguage} />
         </>
     )
 }
-export default memo(Header)

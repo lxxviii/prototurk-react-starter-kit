@@ -1,7 +1,13 @@
-export default function Footer() {
+import SwitchLanguage from "./SwitchLanguage";
+import SwitchTheme from "./SwitchTheme";
+
+export default function Footer({ theme, setTheme, language, setLanguage }) {
+
     return (
         <>
-            <h1>FOOTER</h1>
+            FOOTER <br />
+            <SwitchTheme theme={theme} setTheme={setTheme} />
+            <SwitchLanguage language={language} setLanguage={setLanguage} />
         </>
-    );
+    )
 }

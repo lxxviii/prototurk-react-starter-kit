@@ -1,21 +1,17 @@
-import styles from './App.module.css';
-import Home from './component/Home';
+import { useState } from "react";
+import Header from './component/Header';
+import Footer from './component/Footer';
 
-function App() {
+export default function App() {
+
+  const [theme, setTheme] = useState('light');
+  const [language, setLanguage] = useState('tr');
 
   return (
-    <div className={styles}>
-      <div className="App">
-        <h4>{process.env.NODE_ENV}</h4>
-        <p>{process.env.REACT_APP_API_URL}</p>
-        {process.env.NODE_ENV === 'production' && (
-          <>
-            <img src='../build/logo512.png' alt='' />
-          </>
-        )}
-        <Home />
-      </div>
+    <div className='App'>
+      <Header theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage} /> <br />
+      APP <br />
+      <Footer theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage} />
     </div>
   );
 }
-export default App;
