@@ -1,17 +1,19 @@
 import { useState } from "react";
-import Header from './component/Header';
-import Footer from './component/Footer';
+import Home from "./pages/Home";
+import LanguageContext from './context/LanguageContext';
+import ThemeContext from "./context/ThemeContext";
 
 export default function App() {
 
   const [theme, setTheme] = useState('light');
   const [language, setLanguage] = useState('tr');
+  const data = {theme, setTheme, language, setLanguage}
 
   return (
-    <div className='App'>
-      <Header theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage} /> <br />
-      APP <br />
-      <Footer theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage} />
-    </div>
+    <LanguageContext.Provider value={data}>
+      <ThemeContext.Provider value={data}>
+        <Home />
+      </ThemeContext.Provider>
+    </LanguageContext.Provider>
   );
 }

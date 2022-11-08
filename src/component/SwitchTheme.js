@@ -1,4 +1,9 @@
-export default function SwitchTheme({ theme, setTheme }) {
+import { useContext } from "react";
+import ThemeContext from '../context/ThemeContext';
+
+export default function SwitchTheme() {
+
+    const { theme, setTheme } = useContext(ThemeContext);
 
     const switchTheme = (() => (setTheme(theme === 'light' ? 'dark' : 'light')))
 
