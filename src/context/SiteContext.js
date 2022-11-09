@@ -1,5 +1,17 @@
-import { createContext} from "react";
+import { useState, createContext} from "react";
 
-const SiteContext = createContext();
+export const Context = createContext();
 
-export default SiteContext;
+const Provider = ({children}) =>{
+    
+    const [theme, setTheme] = useState('light');
+    const [language, setLanguage] = useState('tr');
+    const data = { theme, setTheme, language, setLanguage }
+
+    return (
+        <Context.Provider value={data}>
+          {children}
+        </Context.Provider>
+      )
+}
+export default Provider
