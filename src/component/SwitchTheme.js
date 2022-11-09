@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import ThemeContext from '../context/ThemeContext';
+import SiteContext from '../context/SiteContext';
 
 export default function SwitchTheme() {
 
-    const { theme, setTheme } = useContext(ThemeContext);
+    const { theme, setTheme } = useContext(SiteContext);
 
     const switchTheme = (() => (setTheme(theme === 'light' ? 'dark' : 'light')))
 
