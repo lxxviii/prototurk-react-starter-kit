@@ -14,7 +14,5 @@ const Provider = ({children}) =>{
         </Context.Provider>
       )
 }
-
-export const useSite = () => useContext(Context)
-
-export default Provider
+export const useSite = () => useContext(Context);
+export default Provider;

@@ -1,10 +1,12 @@
-import SiteProvider from "./context/SiteContext";
+import { SiteContext, AuthContext } from "./context";
 import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <SiteProvider>
-      <Home />
-    </SiteProvider>
+    <SiteContext>
+      <AuthContext>
+        <Home />
+      </AuthContext>
+    </SiteContext>
   )
 }
