@@ -1,15 +1,16 @@
 import { useContext } from "react";
-import SiteContext, {Context} from '../context/SiteContext';
+import { Context } from '../context/SiteContext';
 
 export default function SwitchLanguage() {
 
     const { language, setLanguage } = useContext(Context);
+    const switchLanguage = (() => setLanguage(language === 'tr' ? 'en' : 'tr'))
 
     return (
         <>
             <br />
             Mevcut Dil : {language} <br />
-            <button onClick={() => setLanguage(language === 'tr' ? 'en' : 'tr')}> Değiştir </button>
+            <button onClick={switchLanguage}> Değiştir </button>
         </>
     )
 }
