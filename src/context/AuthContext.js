@@ -6,7 +6,7 @@ const Context = createContext();
 const Provider = ({ children }) => {
 
     const [state, dispatch] = useReducer(authReducer, {
-        user: false
+        user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : false
     })
 
     const data = {

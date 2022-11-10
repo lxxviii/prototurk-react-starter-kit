@@ -6,8 +6,8 @@ const Context = createContext();
 const Provider = ({ children }) => {
 
   const [state, dispatch] = useReducer(siteReducer, {
-    theme: 'light',
-    language: 'tr'
+    theme: localStorage.getItem('theme') || 'light',
+    language: localStorage.getItem('language') || 'tr'
   })
 
   const data = {

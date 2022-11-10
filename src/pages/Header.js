@@ -7,8 +7,10 @@ export default function Header() {
     const { user, dispatch } = useAuth();
 
     const login = () => {
+        /* KULLANICI ADI VE ŞİFRE API'YE İLETİLİYOR*/
         dispatch({
             type: 'LOGIN',
+            /* KULLANICI VE ŞİFRE BİLGİSİ API'DEN CEVAPLANIYOR */
             payload: {
                 id: 1,
                 name: 'tayfun'
@@ -16,6 +18,7 @@ export default function Header() {
         })
     };
 
+    /* KULLANICI ADI VE ŞİFRE OTURUMDAN SİLİNİYOR*/
     const logout = () => {
         dispatch({
             type: 'LOGOUT'
