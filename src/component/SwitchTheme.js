@@ -2,14 +2,19 @@ import { useSite } from '../context';
 
 export default function SwitchTheme() {
 
-    const { theme, setTheme } = useSite();
-    const switchTheme = (() => (setTheme(theme === 'light' ? 'dark' : 'light')))
+    const {theme, dispatch } = useSite();
+
+    const switchTheme = () => {
+        dispatch({
+            type: 'TOGGLE_THEME',
+        })
+    }
 
     return (
         <>
             <br />
             Mevcut Tema : {theme} <br />
-            <button onClick={switchTheme}> Değiştir </button>
+            <button onClick={switchTheme}> Temayı Değiştir </button>
         </>
     )
 }

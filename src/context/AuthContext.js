@@ -1,11 +1,18 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
+import { authReducer } from '../reducer';
 
-const Context= createContext();
+const Context = createContext();
 
 const Provider = ({ children }) => {
 
-    const [user, setUser] = useState(false);
-    const data = { user, setUser };
+    const [state, dispatch] = useReducer(authReducer, {
+        user: false
+    })
+
+    const data = {
+        ...state,
+        dispatch
+    }
 
     return (
         <Context.Provider value={data}>

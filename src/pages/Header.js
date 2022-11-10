@@ -4,17 +4,22 @@ import { useAuth } from '../context';
 
 export default function Header() {
 
-    const {user, setUser} = useAuth();
+    const { user, dispatch } = useAuth();
 
     const login = () => {
-        setUser({
-            name: 'tayfun',
-            id:1
+        dispatch({
+            type: 'LOGIN',
+            payload: {
+                id: 1,
+                name: 'tayfun'
+            }
         })
     };
 
     const logout = () => {
-        setUser(false);
+        dispatch({
+            type: 'LOGOUT'
+        })
     }
 
 
@@ -22,7 +27,7 @@ export default function Header() {
         <header>
             HEADER <br />
             {(user && <button onClick={logout}> Çıkış Yap </button>) || <button onClick={login}> Giriş Yap </button>}
-            <hr/>
+            <hr />
             <SwitchTheme />
             <SwitchLanguage />
         </header>

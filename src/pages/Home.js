@@ -10,7 +10,8 @@ export default function Home() {
         <>
             <Header /> <br />
             APP HOME
-            {user && (<div style={{ padding: 10, border: '10px solid red' }}> Bu alan sadece giriş işlemi yapılınca görünür</div>)}
+            {user && (
+            <div style={{ padding: 10, border: '10px solid red' }}> Bu alan sadece giriş işlemi yapılınca görünür</div>)}
             <Footer />
         </>
     )
