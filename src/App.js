@@ -1,12 +1,12 @@
-import { SiteContext, AuthContext } from "./context";
+import { SiteProvider, AuthProvider } from "./context";
 import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <SiteContext>
-      <AuthContext>
+    <SiteProvider>
+      <AuthProvider>
         <Home />
-      </AuthContext>
-    </SiteContext>
+      </AuthProvider>
+    </SiteProvider>
   )
 }
