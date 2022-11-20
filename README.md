@@ -1,1 +1,1 @@
-# Adalet Bakanlığı tarafında yapılacak hazırlıklar için düşünülmüştür.
+# ProtoTurk Hazırlık pratikleri olarak eklenmiştir.
